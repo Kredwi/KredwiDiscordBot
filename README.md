@@ -3,8 +3,8 @@
 ## Description
 **KredwiBot** is a Public Discord bot.
 
-The first public Discord bot by Kredwi written in JavaScript.
-For all questions, write personally to @kredwi.
+**KredwiDiscordBot** is the first public bot made by Kredwi.
+There is no specific goal or theme in this bot, I just did and added whatever came to mind. That’s how it turned out, this bot has some fun commands and some frankly unnecessary commands, and it also works with some APIs in order to expand the functionality. There is something in this bot that I am proud of, and there is something that I will soon delete. Perhaps soon I will be able to make it cooler, but now I have run out of ideas on what else to add there. The bot adds some useful commands and some useless ones. For example, the `/words` command is really useless, so why not use it? Or the commands `/ban`, `/kick`, they seem to be useful, but no one will use them. I hope no one will hate this bot, it’s just my little project.
 Supports **English** and **Russian** languages
 
 ## Keys

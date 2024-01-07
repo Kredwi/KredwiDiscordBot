@@ -4,7 +4,7 @@
   "description": "The first public Discord bot by Kredwi written in JavaScript.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index"
   },
   "author": "Kredwi",
   "license": "ISC",

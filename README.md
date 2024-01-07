@@ -9,11 +9,12 @@ Replace all keys in the file `.env`
 - `steamToken` - Steam token
 - `steamIdToken` - SteamId.uk token
 
-KredwiBot is a Public Discord bot.
+## Description
+**KredwiBot** is a Public Discord bot.
 
 The first public Discord bot by Kredwi written in JavaScript.
 For all questions, write personally to @kredwi.
-Supports English and Russian languages
+Supports **English** and **Russian** languages
 
 ## Issues
 There are some issues with certain commands:
@@ -43,5 +44,3 @@ There are some issues with certain commands:
 - `/words` - Get information about a piece of text.
 
 Additionally, since I'm still new to JavaScript, the code looks a bit messy.
-
-This is the same text translated and formatted as a cool readme.md for GitHub.

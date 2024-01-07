@@ -1,9 +1,11 @@
 # KredwiDiscordBot
 
-## Example
-- Replace all keys in the file `.env`
-- Install library `npm install`
-- After replacing all the keys in the `.env` file, run the bot `npm run start`
+## Description
+**KredwiBot** is a Public Discord bot.
+
+The first public Discord bot by Kredwi written in JavaScript.
+For all questions, write personally to @kredwi.
+Supports **English** and **Russian** languages
 
 ## Keys
 - `clientId` - Discord Client Id
@@ -13,12 +15,10 @@
 - `steamToken` - Steam token
 - `steamIdToken` - SteamId.uk token
 
-## Description
-**KredwiBot** is a Public Discord bot.
-
-The first public Discord bot by Kredwi written in JavaScript.
-For all questions, write personally to @kredwi.
-Supports **English** and **Russian** languages
+## Example
+- Replace all keys in the file `.env`
+- Install library `npm install`
+- After replacing all the keys in the `.env` file, run the bot `npm run start`
 
 ## Issues
 There are some issues with certain commands:

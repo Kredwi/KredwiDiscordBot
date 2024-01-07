@@ -1,6 +1,13 @@
 # KredwiDiscordBot
  
 Replace all keys in the file `.env`
+## Keys
+- `clientId` - Discord Client Id
+- `token` - Discord Bot Token
+- `animalToken` - TheCatApi and TheDogApi token
+- `lastFm` - Last.FM token
+- `steamToken` - Steam token
+- `steamIdToken` - SteamId.uk token
 
 KredwiBot is a Public Discord bot.
 

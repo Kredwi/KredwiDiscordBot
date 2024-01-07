@@ -1,7 +1,7 @@
 {
   "name": "discordkredwibot",
   "version": "1.0.0",
-  "description": "",
+  "description": "The first public Discord bot by Kredwi written in JavaScript.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

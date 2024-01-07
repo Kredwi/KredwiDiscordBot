@@ -1,6 +1,10 @@
 # KredwiDiscordBot
- 
-Replace all keys in the file `.env`
+
+## Example
+- Replace all keys in the file `.env`
+- Install library `npm install`
+- After replacing all the keys in the `.env` file, run the bot `npm run start`
+
 ## Keys
 - `clientId` - Discord Client Id
 - `token` - Discord Bot Token

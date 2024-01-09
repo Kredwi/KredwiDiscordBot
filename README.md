@@ -27,6 +27,7 @@ There are some issues with certain commands:
 - `/addrole` - If the bot's role is lower than the other roles, the bot goes offline.
 - `/removerole` - If the bot's role is lower than the other roles, the bot goes offline.
 - `/cat`, `/dog`, `/fox`, `/panda` - Sometimes the image does not appear.
+There is no automatic deletion of commands when deleting a command.
 
 ## Commands
 - `/8ball` - Responds to your messages with random answers from a list.

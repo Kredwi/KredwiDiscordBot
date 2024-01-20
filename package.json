@@ -4,7 +4,12 @@
   "description": "The first public Discord bot by Kredwi written in JavaScript.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+  "version": "1.0.0",
+  "description": "The first public Discord bot by Kredwi written in JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
   },
   "author": "Kredwi",
   "license": "ISC",

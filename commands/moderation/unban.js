@@ -14,7 +14,7 @@ module.exports = {
     .setDefaultMemberPermissions(PermissionFlagsBits.BanMembers)
     .addStringOption(option => option.setName('member').setNameLocalizations({
         ru: 'участник'
-    }).setDescription('enter the member ID or alias (without numbers after # and without #)').setDescriptionLocalizations({
+    }).setDescription('enter the member ID or alias (without numbers after # and without #)').setDescriptionLocalizations({ // локализация
         ru: 'введите ID участника или псевдоним (без цифр после # и без #)'
     }).setRequired(true)),
     async execute(interaction) {
@@ -46,7 +46,6 @@ module.exports = {
             await interaction.reply({ embeds: [embedUnban], ephemeral: false });
         } catch (error) {
             console.error(error);
-            console.log(error);
         }
     }
 }

@@ -16,7 +16,8 @@ const bot = new Client({
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.MessageContent,
         GatewayIntentBits.GuildVoiceStates,
-        GatewayIntentBits.GuildMembers
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildPresences
     ]
 })
 const commands = [];
@@ -38,19 +39,20 @@ for (const file of buttonFolders) {
     const button = require('./buttons/' + file);
     if ('data' in button && 'execute' in button) bot.buttons.set(button.data.data.custom_id, button);
 }
-bot.once(Events.ClientReady, (ctx) => {
-    bot.guilds.cache.forEach(guild => {
-        servers[index] = guild.id;
-        index++;
-    });
-    commands.forEach(comm => bot.application?.commands.create(comm))
-    console.log(ctx.user.username + " started\n" + "Count guilds: " + servers.length);
-    bot.user.setPresence({
-        status: 'idle',
-        activities: [{ name: String(servers.length) + ' guilds', type: ActivityType.Watching }],
-        afk: false
+bot.once(Events.ClientReady, async (ctx) => {
+    const commandExecutes = await bot.application?.commands.fetch();
+    commandExecutes.map(com => {
+        if (!commands.some(cmd => cmd.name == com.name)) bot.application?.commands.delete(com);
     })
+    for (let i = 0; i < commands.length; i++) {
+        setActivity('dnd', 'Command: ' + i + '/' + commands.length + ' registered', ActivityType.Playing);
+        await bot.application.commands.create(commands[i]);
+    }
+    getListGuilds();
+    console.log(ctx.user.username + " started\n" + "Count guilds: " + servers.length);
 })
+bot.on(Events.GuildCreate, () => getListGuilds());
+bot.on(Events.GuildDelete, () => getListGuilds());
 bot.on(Events.InteractionCreate, async interaction => {
     const lang = await getLocaleFile(interaction.guildLocale);
     if (!interaction.isChatInputCommand()) {
@@ -60,11 +62,11 @@ bot.on(Events.InteractionCreate, async interaction => {
             await button.execute(interaction);
         } catch (error) {
             await interaction.followUp({ content: lang.btnNotWork, ephemeral: true });
-            console.log(error);
+            console.error(error);
         }
     } else {
         const command = bot.commands.get(interaction.commandName);
-        if (!command) return;
+        if (!command) return await interaction.reply({ content: lang.cmdNotFound, ephemeral: true });
         try {
             await command.execute(interaction);
         } catch (error) {
@@ -76,4 +78,19 @@ bot.on(Events.InteractionCreate, async interaction => {
         }
     }
 })
+function getListGuilds() {
+    index = 0;
+    bot.guilds.cache.forEach(guild => {
+        servers[index] = guild.id;
+        index++;
+    });
+    setActivity('idle', String(servers.length) + ' guilds', ActivityType.Watching);
+}
+function setActivity(status, nameActivity, typeActivity) {
+    bot.user.setPresence({
+        status: status,
+        activities: [{ name: nameActivity, type: typeActivity }],
+        afk: false
+    })
+}
 bot.login(process.env.token);

@@ -99,11 +99,147 @@
     "aboutOfGuildNotFound": "Description not found!",
     "secTime": "sec",
     "displayName": "**Display name**:",
+    "status": "**Status**:",
+    "playing": "Playing ",
+    "listeningTo": "Listening to ",
+    "streaming": "Streaming ",
+    "watching": "Watching ",
+    "online": "<:online:1144953457443352578> Online",
+    "idle": "<:idle:1144953448467529789> idle",
+    "dnd": "<:dnd:1144953452263379014> Do Not Disturb",
+    "offline": "<:offline:1144953465840336906> Offline",
+    "device": "**Device**:",
+    "customStatus": "Custom Status",
+    "web": "Browser",
+    "desktop": "Desktop",
+    "mobile": "Mobile",
+    "xbox": "Console Xbox",
+    "playstation": "Console PlayStation",
     "username": "**Username**:",
     "createdAtU": "Created an account",
     "joinGuildAt": "Logged into the Server",
     "infoForText": "Information about the text",
     "text": "**TEXT**:\n",
     "characters": "Characters",
-    "words": "Words"
+    "words": "Words",
+    "enteredIncorrectDate": "You entered an incorrect date.",
+    "helpWith": "Help with ",
+    "allcommands": "All commands",
+    "helpCommand": {
+        "description": {
+            "value": " This is a :robot: bot that continues to evolve without a specific goal. It is completely free with no subscriptions. The only support required is for :satellite: hosting fees. The bot offers a diverse range of features, including commands related to animals such as :cat: `/cat`, :dog: `/dog`, :panda_face: `/panda`, :fox: `/fox`. It also provides convenience with commands like `/scrobbler` for Last.fm users, allowing you to find and view user information without leaving <:discord:1193535764680671232> Discord. Additionally, there is a command `/steam` to easily 🔎 search for :video_game:  games by their **AppID** or **name**.\n## Select a help category below"
+        },
+        "funny": {
+            "name": "Funny",
+            "description": "We all :heart: love to have fun and laugh. Or maybe you :heart: love **animals**? Then this category is just for you! It is in this category that you will see such cool commands as :cat: `/cat`, :dog: `/dog`, :panda_face: `/panda`, :fox: `/fox`. Or do you want to know your destiny? Then the :crystal_ball: `/8ball` command will help you with this!\n## Commands",
+            "commands": [
+                {
+                    "name": "/8ball",
+                    "value": "Responds to your messages with random answers from a list."
+                  },
+                  {
+                    "name": "/cat",
+                    "value": "Commands to display cat images."
+                  },
+                  {
+                    "name": "/dog",
+                    "value": "Commands to display dog images."
+                  },
+                  {
+                    "name": "/fox",
+                    "value": "Commands to display fox images."
+                  },
+                  {
+                    "name": "/panda",
+                    "value": "Commands to display panda images."
+                  },
+                  {
+                    "name": "/coin",
+                    "value": "Game of heads and tails."
+                  },
+                  {
+                    "name": "/random",
+                    "value": "Generates a random number within a specified range."
+                  }
+            ]
+        },
+        "moderaton": {
+            "name": "Moderation",
+            "description": "Are you tired of spammers and have you banned them? Now too lazy to go to «**Bans**» and unban? There is a solution! The `/unban` command will unban them very quickly! This command works by both **ID** and **username**.\n## Commands",
+            "commands": [
+                {
+                  "name": "/addrole",
+                  "value": "Grants a role to a user."
+                },
+                {
+                  "name": "/removerole",
+                  "value": "Removes a role from a user."
+                },
+                {
+                  "name": "/ban",
+                  "value": "bans a member."
+                },
+                {
+                    "name": "/unban",
+                    "value": "Unbans a member."
+                }
+            ]
+        },
+        "socials": {
+            "name": "Socials",
+            "description": "Tired of leaving <:discord:1193535764680671232> Discord to look at some information? Enough! This bot adds a special category ✨`Socials`✨ in which you can view information about your social network or so on. And it's all free!!\n## Commands",
+            "commands": [
+                {
+                    "name": "/github",
+                    "value": "Get information about a user on GitHub."
+                },
+                {
+                    "name": "/scrobbler",
+                    "value": "Get information about a user on Last.fm."
+                },
+                {
+                    "name": "/steam",
+                    "value": "Get information about a game."
+                }
+            ]
+        },
+        "utilities": {
+            "name": "Utilities",
+            "description": "Important utilities are the main aspect of any <:discord:1193535764680671232> Discord bot. And that’s why this bot has very few commands that will help you in some situations. Perhaps they are not so important, but they can still be used to somehow simplify the use of <:discord:1193535764680671232> Discord and others. Below are all the teams that are in this category.\n## Commands",
+            "commands": [
+                {
+                    "name": "/help",
+                    "value": "View this message"
+                  },
+                  {
+                    "name": "/avatar",
+                    "value": "View a user's avatar."
+                  },
+                  {
+                    "name": "/math",
+                    "value": "Perform a mathematical expression."
+                  },
+                  {
+                    "name": "/server",
+                    "value": "Information about the Discord server."
+                  },
+                  {
+                    "name": "/words",
+                    "value": "Get information in the text (Number of letters, words)"
+                  },
+                  {
+                    "name": "/user",
+                    "value": "Get User information (Display name, Avatar, username, etc.)"
+                  },
+                  {
+                    "name": "/unix",
+                    "value": "Convert regular date `07/01/2024` to Unix time `1719759600`"
+                  },
+                  {
+                    "name": "/ping",
+                    "value": "Simple command."
+                  }
+            ]
+        }
+    }
 }

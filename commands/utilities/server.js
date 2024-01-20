@@ -28,7 +28,7 @@ module.exports = {
             .setDescription(server.description ? lang.aboutOfGuild + server.description : lang.aboutOfGuildNotFound)
             .setThumbnail(server.iconURL())
             .addFields(
-                {name: lang.owner, value: `${await server.fetchOwner()}`, inline: true},
+                {name: lang.owner, value: String(await server.fetchOwner()), inline: true},
                 {name: lang.country, value: String(server?.preferredLocale), inline: true},
                 {name: lang.members, value: String(server?.memberCount), inline: true},
                 {name: lang.boosters, value: String(server?.premiumSubscriptionCount), inline: true},
@@ -44,7 +44,7 @@ module.exports = {
             .setTimestamp();
             await interaction.reply({ embeds: [embedServerInfo], ephemeral: visible });   
         } catch (error) {
-            console.log(error);
+            console.error(error);
         }
     }
 }

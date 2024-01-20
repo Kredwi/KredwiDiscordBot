@@ -43,9 +43,8 @@ module.exports = {
             .setFooter({ text: lang.discordServer + interaction.guild.name })
             .setTimestamp();
             if (user.id != interaction.guild.ownerId) {
-                if (user.bot) return await interaction.reply({ content: lang.botNotAccess, ephemeral: true });
-                    if (interaction.guild.members.cache.get(user.id).roles.highest.comparePositionTo(interaction.member.roles.highest) <= 0) return await interaction.reply({ content: lang.notPermissionUser, ephemeral: true });
-                    member.kick(reason);
+                if (!user.bot) return await interaction.reply({ content: lang.botNotAccess, ephemeral: true });
+                    await member.kick(reason);
                     await interaction.reply({ embeds: [embedKick], ephemeral: false });
             } else await interaction.reply({ content: lang.notKickedOwnerGuild, ephemeral: true });   
         } catch (error) {

@@ -37,7 +37,7 @@ module.exports = {
             );
             await interaction.reply({ embeds: [embedText], ephemeral: visible });
         } catch (error) {
-            console.log(error);
+            console.error(error);
         }
     }
 }

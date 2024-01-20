@@ -4,7 +4,7 @@ const getLocaleFile = require('../locale.js');
 module.exports = {
     data: new ButtonBuilder()
     .setCustomId('recentTracks')
-    .setLabel('Recent Tracks')
+    .setEmoji('⌛')
     .setStyle(ButtonStyle.Secondary),
     async execute(interaction) {
         try {
@@ -17,10 +17,7 @@ module.exports = {
                 const channel = interaction.member.guild.channels.cache.get(interaction.channelId);
                 const tracks = data.recenttracks.track;
                 const trackList = tracks.map((track, index = 0) => `${index + 1}. **${track.artist['#text']}** - *${track.name}*`);
-                const deleteButton = new ButtonBuilder()
-                .setCustomId('deleteMessage')
-                .setStyle(ButtonStyle.Danger)
-                .setLabel(lang.deleteMessage);
+                const deleteButton = new ButtonBuilder(interaction.client.buttons.get('deleteMessage').data.data).setLabel(lang.deleteMessage);
                 const buttons = new ActionRowBuilder()
                 .setComponents(deleteButton);
                 const embedScrobbler = new EmbedBuilder()
@@ -32,8 +29,7 @@ module.exports = {
                     iconURL: interaction.message.embeds[0].data.footer.icon_url
                 })
                 .setTimestamp();
-                await interaction.message.delete();
-                await channel.send({ embeds: [embedScrobbler], components: [buttons] });
+                await interaction.update({ embeds: [embedScrobbler], components: [buttons] });
             } else return await interaction.reply({ content: lang.notPermissionControlMessage, ephemeral: true });
         } catch (error) {
             console.error(error);

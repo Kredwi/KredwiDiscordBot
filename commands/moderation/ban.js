@@ -42,12 +42,12 @@ module.exports = {
         .setTimestamp();
         try {
             if (user.id != interaction.guild.ownerId) {
-                if (guild.members.cache.get(user.id).roles.highest.comparePositionTo(interaction.member.roles.highest) <= 0) return await interaction.reply({ content: lang.notPermissionUser, ephemeral: true });
-                guild.members.ban(user, { reason });
+                await guild?.bans?.create(user, { reason });
                 await interaction.reply({ embeds: [embedBan], ephemeral: false });
             } else await interaction.reply({ content: lang.notBannedOwnerGuild, ephemeral: true });   
         } catch (error) {
-            console.log(error)
+            console.error(error);
+            await interaction.reply({ content: lang.notPermissionUser, ephemeral: true });
         }
     }
 }

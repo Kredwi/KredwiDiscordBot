@@ -3,8 +3,8 @@ const getLocaleFile = require('../locale.js');
 module.exports = {
     data: new ButtonBuilder()
     .setCustomId('deleteMessage')
-    .setStyle(ButtonStyle.Danger)
-    .setLabel('Удалить данное сообщение'),
+    .setEmoji('🗑️')
+    .setStyle(ButtonStyle.Danger),
     async execute(interaction) {
         try {
             const lang = await getLocaleFile(interaction.guildLocale);

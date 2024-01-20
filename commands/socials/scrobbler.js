@@ -25,21 +25,13 @@ module.exports = {
             const user = interaction.options.getString('user');
             const data = await getInfoScrobbler('user.getInfo', user, limit);
             if (!data?.user?.name) return await interaction.reply({ content: lang.sUser + user + lang.sUserNotFound, ephemeral: true });
-            const userInfo = new ButtonBuilder()
-                .setCustomId('userInfo')
+            const userInfo = new ButtonBuilder(interaction.client.buttons.get('userInfo').data.data)
                 .setLabel(lang.sBasicInfo)
-                .setStyle(ButtonStyle.Secondary);
-            const recentTracks = new ButtonBuilder()
-                .setCustomId('recentTracks')
+            const recentTracks = new ButtonBuilder(interaction.client.buttons.get('recentTracks').data.data)
                 .setLabel(lang.lastTracksListened)
-                .setStyle(ButtonStyle.Secondary);
-            const topTracks = new ButtonBuilder()
-                .setCustomId('topTracks')
+            const topTracks = new ButtonBuilder(interaction.client.buttons.get('topTracks').data.data)
                 .setLabel(lang.topTracksListened)
-                .setStyle(ButtonStyle.Secondary);
-            const deleteButton = new ButtonBuilder()
-                .setCustomId('deleteMessage')
-                .setStyle(ButtonStyle.Danger)
+            const deleteButton = new ButtonBuilder(interaction.client.buttons.get('deleteMessage').data.data)
                 .setLabel(lang.deleteMessage);
             const buttons = new ActionRowBuilder()
             .addComponents(userInfo, recentTracks, topTracks, deleteButton);
@@ -61,7 +53,7 @@ module.exports = {
                 embeds: [userEmbed]
             });
         } catch (error) {
-            console.log(error);
+            console.error(error);
         }
     }
 }

@@ -29,8 +29,8 @@ module.exports = {
             .setTimestamp();
             await interaction.reply({ embeds: [embedCat], ephemeral: visible });
         } catch (err) {
-            console.log(err);
-            console.log(err.message);
+            console.error(err);
+            console.error(err.message);
         }
     }
 }

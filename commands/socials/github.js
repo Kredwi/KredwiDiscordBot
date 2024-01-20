@@ -67,7 +67,7 @@ module.exports = {
             }
             else await interaction.reply({ content: lang.userNameNot, ephemeral: true });
         } catch (error) {
-            console.log(error);
+            console.error(error);
         }
     }
 }

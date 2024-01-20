@@ -1,10 +1,10 @@
 {
   "name": "discordkredwibot",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.2.1",
+  "description": "The first public Discord bot by Kredwi written in JavaScript.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "Kredwi",
   "license": "ISC",
@@ -13,7 +13,6 @@
     "dotenv": "^16.3.1",
     "express.js": "^1.0.0",
     "mathjs": "^12.2.1",
-    "moment": "^2.29.4",
-    "mysql2": "^3.6.5"
+    "moment": "^2.29.4"
   }
 }

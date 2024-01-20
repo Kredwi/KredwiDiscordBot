@@ -4,7 +4,7 @@ const getLocaleFile = require('../locale.js');
 module.exports = {
     data: new ButtonBuilder()
     .setCustomId('userInfo')
-    .setLabel('User info')
+    .setEmoji('📔')
     .setStyle(ButtonStyle.Secondary),
     async execute(interaction) {
         try {
@@ -18,9 +18,7 @@ module.exports = {
                 const response2 = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${user}&api_key=${process.env.lastFm}&format=json&limit=1`);
                 const recentTracks = await response2.json();
                 const nowplaying = recentTracks.recenttracks.track[0];
-                const deleteButton = new ButtonBuilder()
-                .setCustomId('deleteMessage')
-                .setStyle(ButtonStyle.Danger)
+                const deleteButton = new ButtonBuilder(interaction.client.buttons.get('deleteMessage').data.data)
                 .setLabel(lang.deleteMessage);
                 const buttons = new ActionRowBuilder()
                 .setComponents(deleteButton);
@@ -41,8 +39,7 @@ module.exports = {
                     iconURL: interaction.message.embeds[0].data.footer.icon_url
                 })
                 .setTimestamp();
-                await interaction.message.delete();
-                await channel.send({ embeds: [embedScrobbler], components: [buttons] });
+                await interaction.update({ embeds: [embedScrobbler], components: [buttons] });
             } else return await interaction.reply({ content: lang.notPermissionControlMessage, ephemeral: true });
         } catch (error) {
             console.error(error);

@@ -1,8 +1,11 @@
 {
+    "yesR": "Yes",
+    "noR": "No",
     "btnNotFound": "This button was not found!",
     "btnNotWork": "This button does not work'",
     "cmdNotFound": "This command was not found",
     "cmdNotWork": "An error occurred while executing this command!",
+    "cmdNotWorkInDM": "❌ An error occurred while executing this command. One of the reasons is that you are not running it on the server. You may be trying to do it in the bot's private messages.",
     "answers": [
         "Yes", "Obviously", "Most likely", "What?", "But it's real",
         "No", "Not", "Of course not", "I won't answer", "I'll never answer",
@@ -104,6 +107,7 @@
     "listeningTo": "Listening to ",
     "streaming": "Streaming ",
     "watching": "Watching ",
+    "competing": "Competing in ",
     "online": "<:online:1144953457443352578> Online",
     "idle": "<:idle:1144953448467529789> idle",
     "dnd": "<:dnd:1144953452263379014> Do Not Disturb",
@@ -118,6 +122,12 @@
     "username": "**Username**:",
     "createdAtU": "Created an account",
     "joinGuildAt": "Logged into the Server",
+    "verifyLevel": "Verification Level",
+    "none": "None",
+    "low": "Low",
+    "medium": "Medium",
+    "high": "high",
+    "vhigh": "very high",
     "infoForText": "Information about the text",
     "text": "**TEXT**:\n",
     "characters": "Characters",
@@ -156,6 +166,10 @@
                   {
                     "name": "/coin",
                     "value": "Game of heads and tails."
+                  },
+                  {
+                    "name": "/kiss",
+                    "value": "Kiss any participant"
                   },
                   {
                     "name": "/random",
@@ -208,6 +222,10 @@
             "description": "Important utilities are the main aspect of any <:discord:1193535764680671232> Discord bot. And that’s why this bot has very few commands that will help you in some situations. Perhaps they are not so important, but they can still be used to somehow simplify the use of <:discord:1193535764680671232> Discord and others. Below are all the teams that are in this category.\n## Commands",
             "commands": [
                 {
+                    "name": "/about",
+                    "value": "Find out information about this bot."
+                  },
+                  {
                     "name": "/help",
                     "value": "View this message"
                   },
@@ -241,5 +259,20 @@
                   }
             ]
         }
-    }
+    },
+    "botDescription": "This is a small bot that has no purpose, it was simply created for convenience.\nIf anything, I am written in <:JavaScript:1201701949146411019> using the [***Discord.js***](https://discord.js.org/) library",
+    "aboutFields": [
+      {"name": "⚒️ Build", "value": "Version: krdwbuildverssg\nBuild data: <t:krdwbuilddatesg:D> (<t:krdwbuilddatesg:R>)"},
+      {"name": "📈 Statistics", "value": "- Servers: krwnumbersg\n- Status: krwstatussg", "inline": true},
+      {"name": "<:developers:1202188878648455168> Developers", "value": "1. Kredwi (649601722557399040)", "inline": true}
+    ],
+    "sourceCode": "https://github.com/Kredwi/KredwiDiscordBot",
+    "kissed": "kissed",
+    "himselfkiss": "kissed himself ♥️",
+    "code": "Code",
+    "invchannel": "Invite channel",
+    "inviter": "Inviter",
+    "InvUrlNotFound": "The invitation URL or code was not found",
+    "id": "ID",
+    "nsfw": "nsfw"
 }

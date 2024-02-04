@@ -38,11 +38,28 @@ module.exports = {
                 server?.afkChannelId ? {name: lang.afkChannel, value: `<#${server.afkChannelId}>`, inline: true} : {name: lang.afkChannel, value: lang.notFound, inline: true},
                 server?.publicUpdatesChannelId ? {name: lang.updateChannel, value: `<#${server.publicUpdatesChannelId}>`, inline: true} : {name: lang.updateChannel, value: lang.notFound, inline: true},
                 server?.safetyAlertsChannelId ? {name: lang.dangerChannel, value: `<#${server.safetyAlertsChannelId}>`, inline: true} : {name: lang.dangerChannel, value: lang.notFound, inline: true},
-                server?.systemChannelId ? {name: lang.systemChannel, value: `<#${server.systemChannelId}>`, inline: true} : {name: lang.systemChannel, value: lang.notFound, inline: true}
+                server?.systemChannelId ? {name: lang.systemChannel, value: `<#${server.systemChannelId}>`, inline: true} : {name: lang.systemChannel, value: lang.notFound, inline: true},
+                {name: lang.verifyLevel, value: checkLevelVerefication(String(server?.verificationLevel)), inline: true}
             )
             .setFooter({ text: lang.discordServer + server.name })
             .setTimestamp();
-            await interaction.reply({ embeds: [embedServerInfo], ephemeral: visible });   
+            await interaction.reply({ embeds: [embedServerInfo], ephemeral: visible });
+            function checkLevelVerefication(level) {
+                switch (level) {
+                    case '0':
+                        return lang.none;
+                    case '1':
+                        return lang.low;
+                    case '2':
+                        return lang.medium;
+                    case '3':
+                        return lang.high;
+                    case '4':
+                        return lang.vhigh;
+                    default:
+                        return lang.notFound;
+                }
+            }
         } catch (error) {
             console.error(error);
         }

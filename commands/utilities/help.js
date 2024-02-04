@@ -20,7 +20,7 @@ module.exports = {
             .setColor(0xff0000)
             .setTitle(lang.helpWith + interaction.client.user.username)
             .setDescription('*' + interaction.client.user.username + '*' + lang.helpCommand.description.value)
-            .setFields({name: lang.allcommands, value: commands.join(' ')})
+            .setFields({name: lang.allcommands + ` (${commands.length})`, value: commands.join(' ')})
             .setFooter({
                 text: interaction.user.id,
                 iconURL: interaction.user.displayAvatarURL() || undefined

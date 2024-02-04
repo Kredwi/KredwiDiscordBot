@@ -24,7 +24,7 @@ module.exports = {
     async execute (interaction) {
         const lang = await getLocaleFile(interaction.guildLocale);
         const user = interaction.options.getUser('user');
-        const visible = interaction.options.getBoolean('hide');
+        const visible = interaction.options.getBoolean('hide') || false;
         const replyEmbed = async (username, avatarUrl, isVisible) => {
             const avatarEmbed = new EmbedBuilder()
             .setColor(0xff0000)

@@ -6,6 +6,7 @@ const {
     Collection
 } = require('discord.js');
 const fs = require('node:fs')
+const package = require('./package.json');
 require('dotenv').config();
 let servers = [];
 let index = 0;
@@ -50,19 +51,22 @@ bot.once(Events.ClientReady, async (ctx) => {
     }
     getListGuilds();
     console.log(ctx.user.username + " started\n" + "Count guilds: " + servers.length);
+    setInterval(getListGuilds, 10800000); // 10800000 ms == 3 hours
 })
 bot.on(Events.GuildCreate, () => getListGuilds());
 bot.on(Events.GuildDelete, () => getListGuilds());
+bot.on(Events.Error, (error) => console.error(error));
 bot.on(Events.InteractionCreate, async interaction => {
-    const lang = await getLocaleFile(interaction.guildLocale);
+    const lang = await getLocaleFile(interaction.guildLocale || interaction.locale);
+    if (!interaction.guildId) return await interaction.reply({ content: lang.cmdNotWorkInDM, ephemeral: true });
     if (!interaction.isChatInputCommand()) {
         const button = bot.buttons.get(interaction.customId);
-        if (!button) await interaction.followUp({ content: lang.btnNotFound, ephemeral: true });
+        if (!button) await interaction.reply({ content: lang.btnNotFound, ephemeral: true });
         try {
             await button.execute(interaction);
         } catch (error) {
-            await interaction.followUp({ content: lang.btnNotWork, ephemeral: true });
             console.error(error);
+            await interaction.reply({ content: lang.btnNotWork, ephemeral: true });
         }
     } else {
         const command = bot.commands.get(interaction.commandName);
@@ -71,9 +75,10 @@ bot.on(Events.InteractionCreate, async interaction => {
             await command.execute(interaction);
         } catch (error) {
             if (interaction.replied || interaction.deferred)
-                await interaction.followUp({ content: lang.cmdNotWork, ephemeral: true })
+                await interaction.reply({ content: lang.cmdNotWork, ephemeral: true });
             else
-                await interaction.followUp({ content: lang.cmdNotFound, ephemeral: true })
+                await interaction.reply({ content: lang.cmdNotFound, ephemeral: true });
+
             console.error(error);
         }
     }
@@ -84,7 +89,7 @@ function getListGuilds() {
         servers[index] = guild.id;
         index++;
     });
-    setActivity('idle', String(servers.length) + ' guilds', ActivityType.Watching);
+    setActivity('idle', ('/help | ' + servers.length + ' servers | v' + package.version), ActivityType.Competing);
 }
 function setActivity(status, nameActivity, typeActivity) {
     bot.user.setPresence({

@@ -40,6 +40,8 @@ There is no automatic deletion of commands when deleting a command.
 - `/removerole` - Removes a role from a user.
 - `/ban` - Bans a member.
 - `/help` - Help with the bot.
+- `/about` - Information about this bot. `Description`, `Build Version`, `Build Date`, `Developers`.
+- `/invite` - View information about the Discord invitation link or code
 - `/unban` - Unbans a member.
 - `/kick` - Kicks a member.
 - `/github` - Get information about a user on GitHub.
@@ -50,5 +52,5 @@ There is no automatic deletion of commands when deleting a command.
 - `/server` - Information about the Discord server.
 - `/words` - Get information about a piece of text.
 - `/unix` - Convert a regular date to UNIX time.
-
+- `/kiss` - Kiss anyone participant
 Additionally, since I'm still new to JavaScript, the code looks a bit messy.

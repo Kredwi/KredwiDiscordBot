@@ -73,6 +73,10 @@ module.exports = {
                     return lang.watching;
                 case 4:
                     return '';
+                case 5:
+                    return lang.competing;
+                default:
+                    return '';
             }
         }
         function getMemberStatus(status) {
@@ -94,7 +98,7 @@ module.exports = {
                 case 'web':
                     return lang.web;
                 case 'mobile':
-                    return 'Телефон';
+                    return lang.mobile;
                 case 'xbox':
                     return lang.xbox;
                 case 'playstation':

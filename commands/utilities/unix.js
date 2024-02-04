@@ -12,8 +12,8 @@ module.exports = {
     })
     .addStringOption(option => option.setName('date').setNameLocalizations({
         ru: 'дата'
-    }).setDescription('enter date').setDescriptionLocalizations({
-        ru: 'введите дату'
+    }).setDescription('enter date or now').setDescriptionLocalizations({
+        ru: 'введите дату или сейчас'
     }).setRequired(true))
     .addBooleanOption(option => option.setName('hide').setNameLocalizations({
         ru: 'скрыть'
@@ -24,14 +24,19 @@ module.exports = {
         const lang = await getLocaleFile(interaction.guildLocale);
         try {
             const visible = interaction.options.getBoolean('hide') || false;
-            const date = moment(interaction.options.getString('date')).unix();
-            if (!isNaN(date))
-                await interaction.reply({ content: `\`${date}\` <t:${date}:R>`, ephemeral: visible })
-            else 
-                await interaction.reply({ content: lang.enteredIncorrectDate, ephemeral: true })
+            const userString = interaction.options.getString('date');
+            const userStringF = ['how', 'current date', 'now', 'date', 'at', 'time', 'timestamp', 'сейчас', 'дата'];
+            if (!userStringF.includes(userString.trim().toLowerCase())) {
+                const date = moment(userString).unix();
+                if (!isNaN(date))
+                    await interaction.reply({ content: `\`${date}\` <t:${date}:R>`, ephemeral: visible })
+                else 
+                    await interaction.reply({ content: lang.enteredIncorrectDate, ephemeral: true })
+            } else
+                    await interaction.reply({ content: `\`${moment().utc().unix()}\` <t:${moment().utc().unix()}:R>`, ephemeral: visible })
         } catch (error) {
             console.error(error);
-            await interaction.reply({ content: lang.enteredIncorrectDate, ephemeral: true })
+            await interaction.reply({ content: lang.enteredIncorrectDate, ephemeral: true });
         }
     }
 }

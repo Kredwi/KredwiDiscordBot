@@ -14,7 +14,6 @@ module.exports = {
                 const limit = interaction.message.embeds[0].data.fields[0].value;
                 const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getTopTracks&user=${user}&api_key=${process.env.lastFm}&format=json&limit=${limit}`);
                 const data = await response.json();
-                const channel = interaction.member.guild.channels.cache.get(interaction.channelId);
                 const tracks = data.toptracks.track.map((track, index = 0) => `${index + 1}. **${track.artist.name}** - *${track.name}*\n${lang.listened}: \`${track.playcount}\``);
                 const deleteButton = new ButtonBuilder(interaction.client.buttons.get('deleteMessage').data.data).setLabel(lang.deleteMessage);
                 const buttons = new ActionRowBuilder()
@@ -22,7 +21,7 @@ module.exports = {
                 const embedScrobbler = new EmbedBuilder()
                 .setTitle(lang.popularTracks + data.toptracks['@attr'].user)
                 .setColor(0xff0000)
-                .setFields({name: lang.popularWith + data.toptracks['@attr'].user, value: `${tracks.join('\n')}`, inline: true})
+                .setFields({name: lang.popularWith + data.toptracks['@attr'].user, value: `${tracks.join('\n') || lang.notFound}`, inline: true})
                 .setFooter({
                     text: interaction.message.embeds[0].data.footer.text,
                     iconURL: interaction.message.embeds[0].data.footer.icon_url

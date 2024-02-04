@@ -26,7 +26,7 @@ module.exports = {
             const user = interaction.client.user;
             const botAvatar = await user.displayAvatarURL();
             await interaction.client.guilds.cache.map(() => servers++);
-            const dateBuild = moment().unix();
+            const dateBuild = "1707055435";
             const embed = new EmbedBuilder()
             .setAuthor({
                 name: user.username + (user.discriminator > 1 ? '#' + user.discriminator : ''),

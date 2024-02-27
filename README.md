@@ -53,4 +53,8 @@ There is no automatic deletion of commands when deleting a command.
 - `/words` - Get information about a piece of text.
 - `/unix` - Convert a regular date to UNIX time.
 - `/kiss` - Kiss anyone participant
+- `/do` - Describe the actions of the surrounding world
+- `/me` - Describe your actions
+- `/try` - Describe the action with a 50% probability
+- `/casino` - The game "slots" can be said to be an ordinary casino.
 Additionally, since I'm still new to JavaScript, the code looks a bit messy.

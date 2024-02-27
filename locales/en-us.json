@@ -17,7 +17,7 @@
     "tails": "Tails",
     "eagle": "Eagle",
     "coinSide": ["Tails", "Eagle"],
-    "replyCoinMessageYes": "You made a wish: `krdwuserRed` and `krdwrandom` fell out. We approve as they say!",
+    "replyCoinMessageYes": "You made a wish: `krdwuserRed` and `krdwrandom` fell out. 🎉We approve as they say!",
     "replyCoinMessageNo": "You made a wish: `krdwuserRed` and `krdwrandom` fell out. Looser!",
     "roleAdded": "The role has been successfully added!",
     "noAccessToRole": "The bot does not have access to **krdwrole**\n Move the bot's role above this role, and then you can issue it.",
@@ -172,8 +172,20 @@
                     "value": "Kiss any participant"
                   },
                   {
-                    "name": "/random",
-                    "value": "Generates a random number within a specified range."
+                    "name": "/me",
+                    "value": "Describe your actions that you complete"
+                  },
+                  {
+                    "name": "/do",
+                    "value": "Describe the action of the surrounding world and nature"
+                  },
+                  {
+                    "name": "/try",
+                    "value": "Describe an action in which a misfire may occur"
+                  },
+                  {
+                    "name": "/casino",
+                    "value": "A regular casino where you can test your luck"
                   }
             ]
         },
@@ -250,6 +262,10 @@
                     "value": "Get User information (Display name, Avatar, username, etc.)"
                   },
                   {
+                    "name": "/random",
+                    "value": "Generates a random number within a specified range."
+                  },
+                  {
                     "name": "/unix",
                     "value": "Convert regular date `07/01/2024` to Unix time `1719759600`"
                   },
@@ -274,5 +290,9 @@
     "inviter": "Inviter",
     "InvUrlNotFound": "The invitation URL or code was not found",
     "id": "ID",
-    "nsfw": "nsfw"
+    "nsfw": "nsfw",
+    "success": "Successfully",
+    "unsuccess": "Unsuccessfully",
+    "yourWin": "You're a Winner",
+    "yourLose": "You're a Lose"
 }

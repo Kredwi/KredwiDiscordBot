@@ -30,7 +30,7 @@ module.exports = {
         try {
             const resuilt = math.evaluate(value);
             const embed = new EmbedBuilder()
-            .setColor(0xff0000)
+            .setColor([44, 45, 49])
             .setDescription(`${lang.resMathNice}  \`${value}\`
             \`\`\` ${resuilt.toString()} \`\`\``);
             await interaction.reply({ embeds: [embed], ephemeral: visible });

@@ -17,7 +17,7 @@ module.exports = {
             const commands = getCommands.map(command => `</${command.name}:${command.id}>`);
             const lang = await getLocaleFile(interaction.guildLocale);
             const embedHelp = new EmbedBuilder()
-            .setColor(0xff0000)
+            .setColor([44, 45, 49])
             .setTitle(lang.helpWith + interaction.client.user.username)
             .setDescription('*' + interaction.client.user.username + '*' + lang.helpCommand.description.value)
             .setFields({name: lang.allcommands + ` (${commands.length})`, value: commands.join(' ')})

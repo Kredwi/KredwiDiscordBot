@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, Util } = require('discord.js');
 const getLocaleFile = require('../../locale.js');
 
 module.exports = {
@@ -27,7 +27,7 @@ module.exports = {
         const visible = interaction.options.getBoolean('hide') || false;
         const answer = interaction.options.getString('question').trim();
         const answerEmbed = new EmbedBuilder()
-        .setColor(0xff0000)
+        .setColor([44, 45, 49])
         .setDescription(lang.question + answer + '\n' + lang.answer + answers[randomInt(answers.length, 0)]);
         await interaction.reply({ embeds: [answerEmbed], ephemeral: visible });
     }

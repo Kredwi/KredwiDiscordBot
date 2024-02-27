@@ -29,7 +29,7 @@ module.exports = {
             const infoInvite = await interaction.client.fetchInvite(invite);
             const embed = new EmbedBuilder()
             .setTitle(infoInvite.guild.name + ` (${infoInvite.guild.id})`)
-            .setColor(0xff0000)
+            .setColor([44, 45, 49])
             .setThumbnail(infoInvite.guild.iconURL())
             .setDescription(infoInvite.guild.description)
             .setFields(

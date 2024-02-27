@@ -26,14 +26,14 @@ module.exports = {
             const user = interaction.client.user;
             const botAvatar = await user.displayAvatarURL();
             await interaction.client.guilds.cache.map(() => servers++);
-            const dateBuild = "1707055435";
+            const dateBuild = "1709023679";
             const embed = new EmbedBuilder()
             .setAuthor({
                 name: user.username + (user.discriminator > 1 ? '#' + user.discriminator : ''),
                 iconURL: botAvatar,
                 url: lang.sourceCode
             })
-            .setColor(0xff0000)
+            .setColor([44, 45, 49])
             .setThumbnail(botAvatar)
             .setDescription('**' + user.username + '** - ' + lang.botDescription)
             .setTimestamp();

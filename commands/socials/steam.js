@@ -35,7 +35,7 @@ module.exports = {
             if (app.success) {
                 const embedApp = new EmbedBuilder()
                 .setTitle(lang.steamAPP + app?.data?.name)
-                .setColor(0xff0000)
+                .setColor([44, 45, 49])
                 .setThumbnail(app?.data?.capsule_imagev5)
                 .setDescription(app?.data?.short_description)
                 .setFields(

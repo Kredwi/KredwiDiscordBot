@@ -7,7 +7,9 @@ module.exports = {
     .setNameLocalizations({
         ru: 'скробблер'
     })
-    .setDescription('получить информацию с lastfm')
+    .setDescription('get information from last fm').setDescriptionLocalizations({
+        ru: 'получить информацию с last fm'
+    })
     .addStringOption(option => option.setName('user').setNameLocalizations({
         ru: 'пользователь'
     }).setDescription('Please enter the Last.Fm user username').setDescriptionLocalizations({
@@ -37,7 +39,7 @@ module.exports = {
             .addComponents(userInfo, recentTracks, topTracks, deleteButton);
             const userEmbed = new EmbedBuilder()
             .setTitle(user)
-            .setColor(0xff0000)
+            .setColor([44, 45, 49])
             .setDescription(lang.sMethod)
             .setFields(
                 {name: lang.count, value: String(limit), inline: true},

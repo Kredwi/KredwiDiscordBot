@@ -28,7 +28,7 @@ module.exports = {
             const visible = interaction.options.getBoolean('hide') || false;
             const textSpace = text.split(' ').filter(word => word.length > 0);
             const embedText = new EmbedBuilder()
-            .setColor(0xff0000)
+            .setColor([44, 45, 49])
             .setTitle(lang.infoForText)
             .setDescription(lang.text + text)
             .setFields(

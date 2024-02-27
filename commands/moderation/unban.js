@@ -34,7 +34,7 @@ module.exports = {
             if (!user[0]) return await interaction.reply({ content: userTag + lang.userNotBanned, ephemeral: true});
             interaction.guild.members.unban(user[0]);
             const embedUnban = new EmbedBuilder()
-            .setColor(0xff0000)
+            .setColor(0, 204, 0)
             .setAuthor({
                 name: user[0].discriminator > 0 ? user[0].username + '#' + user[0].discriminator : user[0].username,
                 iconURL: user[0].displayAvatarURL(),

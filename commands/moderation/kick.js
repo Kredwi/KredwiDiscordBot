@@ -30,7 +30,7 @@ module.exports = {
             const member = interaction.guild.members.cache.get(user.id);
             const reason = interaction.options.getString('reason') || lang.notReason;
             const embedKick = new EmbedBuilder()
-            .setColor(0xff0000)
+            .setColor(0, 204, 0)
             .setAuthor({
                 name: user.discriminator > 0 ? user.username + '#' + user.discriminator : user.username,
                 iconURL: user.displayAvatarURL(),

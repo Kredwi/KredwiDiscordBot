@@ -27,7 +27,7 @@ module.exports = {
         const visible = interaction.options.getBoolean('hide') || false;
         const replyEmbed = async (username, avatarUrl, isVisible) => {
             const avatarEmbed = new EmbedBuilder()
-            .setColor(0xff0000)
+            .setColor([44, 45, 49])
             .setTitle(lang.avatarMessage + username)
             .setImage(avatarUrl + '?size=512')
             .setFooter({ text: lang.discordServer + interaction.guild.name })

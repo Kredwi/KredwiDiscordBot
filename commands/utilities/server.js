@@ -24,7 +24,7 @@ module.exports = {
             const server = interaction.guild;
             const embedServerInfo = new EmbedBuilder()
             .setTitle(server.name.toUpperCase())
-            .setColor(0xff0000)
+            .setColor([44, 45, 49])
             .setDescription(server.description ? lang.aboutOfGuild + server.description : lang.aboutOfGuildNotFound)
             .setThumbnail(server.iconURL())
             .addFields(

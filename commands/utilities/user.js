@@ -44,7 +44,7 @@ module.exports = {
             })) || [];
             const userEmbed = new EmbedBuilder()
             .setTitle(username.toUpperCase())
-            .setColor(0xff0000)
+            .setColor([44, 45, 49])
             .setThumbnail(avatarUrl)
             .setDescription(`
             ${displayName ? lang.displayName + displayName : []}

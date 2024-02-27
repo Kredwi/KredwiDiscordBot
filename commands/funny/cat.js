@@ -23,7 +23,7 @@ module.exports = {
             const data = await response.json()
             const visible = interaction.options.getBoolean('hide') || false;
             const embedCat = new EmbedBuilder()
-            .setColor(0xff0000)
+            .setColor([44, 45, 49])
             .setImage(data[0].url)
             .setFooter({ text: lang.discordServer + interaction.guild.name })
             .setTimestamp();

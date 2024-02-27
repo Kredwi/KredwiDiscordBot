@@ -23,7 +23,7 @@ module.exports = {
     async execute(interaction) {
         const maxNumber = interaction.options.getInteger('max');
         const minNumber = interaction.options.getInteger('min');
-        if (maxNumber <= minNumber) return;
+        if (maxNumber <= minNumber) return interaction.reply({ content: lang.noR, ephemeral: true });
         const resuilt = Math.floor(Math.random() * (maxNumber - minNumber) + minNumber);
         await interaction.reply(String(resuilt));
     }

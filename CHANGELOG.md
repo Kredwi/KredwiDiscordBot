@@ -1,31 +1,20 @@
-# KREDWIBOT CHANGELOG 02.04.2024
+# KREDWIBOT CHANGELOG 02.27.2024
 
 ## Fixed
-- The bot crash in the buttons of the `/scrobbler` command has been fixed, provided that the `Last.FM` list is empty.
-- In the `/user` command, the localization was corrected, in which only the Russian version of the word "**Phone**" was available.
+- - Fixed a bug where when the bot was kicked from the server, the number of servers was not updated
+- Errors have been fixed in the code, and the localization file has been changed
 
 ## Added
- - Added `/kiss` command.
-  - This command allows you to kiss your interlocutor or kiss yourself.
- - Added `/about` command.
-  - This command allows you to find out information about the Bot.
-- Added `/invite` command.
- - This command allows you to find out information about the link - Discord invitation code.
-- Added a default option to the `/avatar` command regarding display to other users.
-- Added an error that triggers if the user executes a command not on the server.
+- an error message has been added to the `/random` command
+- Added an English version of the description of the `/scrobbler` command
+- The `/casino` command has been added
+- Added the `/do` command
+- Added the `/me` command
+- Added the `/try` command
+- Added a new Events `warning`
 
 ## Change
-- In the `/ping` command, the visibility cannot be changed anymore; it will now always be displayed to the user.
-- The `/help` command now displays the number of commands.
-- A new field has been added to the `/server` command with information about the server's security level.
-- The `/unix` command now responds to keywords.
- - `current date`, `now`, `date`, `at`, `time`, `timestamp`, and so on..
-- All `followUp` methods have been changed to `reply`
-- Changed status with new information added
- - `/command | number of servers servers | vbuild version`
-
-## Example
-- `/invite invite:Q82DrzvQDe`
-- `/kiss member:@kredwi`
+- The format of the color code in the embed message has been changed.
+ - From `0xff0000` to `[44, 45, 49]`
 
 That seems to be all for now.

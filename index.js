@@ -6,11 +6,13 @@ const {
     Collection
 } = require('discord.js');
 const fs = require('node:fs')
-const package = require('./package.json');
 require('dotenv').config();
+
 let servers = [];
-let index = 0;
+
 const getLocaleFile = require('./locale.js');
+const package = require('./package.json');
+
 const bot = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -51,11 +53,11 @@ bot.once(Events.ClientReady, async (ctx) => {
     }
     getListGuilds();
     console.log(ctx.user.username + " started\n" + "Count guilds: " + servers.length);
-    setInterval(getListGuilds, 10800000); // 10800000 ms == 3 hours
 })
 bot.on(Events.GuildCreate, () => getListGuilds());
 bot.on(Events.GuildDelete, () => getListGuilds());
 bot.on(Events.Error, (error) => console.error(error));
+bot.on(Events.Warn, (warning) => console.warn(warning));
 bot.on(Events.InteractionCreate, async interaction => {
     const lang = await getLocaleFile(interaction.guildLocale || interaction.locale);
     if (!interaction.guildId) return await interaction.reply({ content: lang.cmdNotWorkInDM, ephemeral: true });
@@ -84,12 +86,8 @@ bot.on(Events.InteractionCreate, async interaction => {
     }
 })
 function getListGuilds() {
-    index = 0;
-    bot.guilds.cache.forEach(guild => {
-        servers[index] = guild.id;
-        index++;
-    });
-    setActivity('idle', ('/help | ' + servers.length + ' servers | v' + package.version), ActivityType.Competing);
+    servers = bot.guilds.cache.map(guild => guild.id);
+    setActivity('idle', `/help | ${servers.length} servers | v${package.version}`, ActivityType.Competing);
 }
 function setActivity(status, nameActivity, typeActivity) {
     bot.user.setPresence({

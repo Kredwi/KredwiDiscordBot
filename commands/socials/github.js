@@ -38,7 +38,7 @@ module.exports = {
             if (data?.message != 'Not Found') {
                 const embedGitHub = new EmbedBuilder()
                 .setTitle(lang.InfoFromGitHub)
-                .setColor(0xff0000)
+                .setColor([44, 45, 49])
                 .setDescription(data?.bio)
                 .setThumbnail(data?.avatar_url)
                 .setFields(

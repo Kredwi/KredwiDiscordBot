@@ -1,7 +1,7 @@
 # KREDWIBOT CHANGELOG 02.27.2024
 
 ## Fixed
-- - Fixed a bug where when the bot was kicked from the server, the number of servers was not updated
+- Fixed a bug where when the bot was kicked from the server, the number of servers was not updated
 - Errors have been fixed in the code, and the localization file has been changed
 
 ## Added
